@@ -23,10 +23,5 @@ class Solution:
             else:
                 return [h[n], pos]
 
-        for i in range(len(nums)):
-            if(nums[i] in h):
-                return([i, h[nums[i]]])
-            h[target - nums[i]] = i
-
 
 
