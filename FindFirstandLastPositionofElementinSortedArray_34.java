@@ -9,6 +9,7 @@ If target is not found in the array, return [-1, -1].
 
 Follow up: Could you write an algorithm with O(log n) runtime complexity?
 		 */
+		// test
         int[] res = {-1,-1}; 
         if (nums == null || nums.length == 0) {
             return res; 
