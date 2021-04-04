@@ -7,7 +7,7 @@ public class _744_FindSmallestLetterGreaterThanTarget {
     	
     	int left = 0; 
     	int right = letters.length - 1; 
-    	while(left < right) {
+    	while(left < right - 1) {
     		//terminate case when left == right: check that only one
     		int mid = left + (right - left)/2; 
     		if(letters[mid] < target) {
@@ -23,6 +23,7 @@ public class _744_FindSmallestLetterGreaterThanTarget {
     		}
     	}
     	if(letters[left] > target) return letters[left]; 
+    	if(letters[right] > target) return letters[right]; 
     	else return letters[0]; 
     }
 	
@@ -30,7 +31,6 @@ public class _744_FindSmallestLetterGreaterThanTarget {
 		// TODO Auto-generated method stub
 		char[] letters = {'c', 'f', 'j'}; 
 		System.out.println(nextGreatestLetter(letters, 'a')); 
-		
 
 	}
 
