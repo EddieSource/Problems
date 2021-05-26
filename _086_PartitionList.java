@@ -1,4 +1,4 @@
-public class _86_PartitionList {
+public class _086_PartitionList {
 	public class ListNode {
 		int val;
 		ListNode next;
