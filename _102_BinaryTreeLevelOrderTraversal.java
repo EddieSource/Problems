@@ -26,9 +26,9 @@ public class _102_BinaryTreeLevelOrderTraversal {
         	
         	for(int i = 0; i < level_length; i++) {
         		TreeNode curr = q.poll(); 
-        		level.add(curr.val); //visit its value
+        		level.add(curr.val); //visit its value; expand
         		
-        		//expand the node
+        		//generate the node
         		if(curr.left != null) {
         			TreeNode left = curr.left; 
         			q.offer(left);  
