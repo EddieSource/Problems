@@ -21,10 +21,14 @@ public class _102_BinaryTreeLevelOrderTraversal {
         
         while(!q.isEmpty()) {
         	List<Integer> level = new ArrayList<>(); 
-        	int level_length = q.size(); 
+        	
+        	int level_length = q.size(); //level length is the size of q before the expanding
+        	
         	for(int i = 0; i < level_length; i++) {
         		TreeNode curr = q.poll(); 
         		level.add(curr.val); //visit its value
+        		
+        		//expand the node
         		if(curr.left != null) {
         			TreeNode left = curr.left; 
         			q.offer(left);  
