@@ -1,5 +1,5 @@
 
-public class _046_balancedBinaryTree {
+public class _110_balancedBinaryTree {
 		 
 	public class TreeNode {
 		int val;
