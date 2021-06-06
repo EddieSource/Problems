@@ -1,5 +1,5 @@
 import java.util.*; 
-public class _078_Subsets {
+public class _0078_Subsets {
 	public static void DFS(int[] nums, List<List<Integer>> res, int index, List<Integer> cur) {
 		if(index == nums.length) {
 			// pay attention to do a hard copy of cur each time adding it

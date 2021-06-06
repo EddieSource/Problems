@@ -1,7 +1,7 @@
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class _378_KthSmallestElementInASortedMatrix {
+public class _0378_KthSmallestElementInASortedMatrix {
     static class Cell {
     	int row; 
     	int col; 

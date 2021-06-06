@@ -1,11 +1,11 @@
 import java.util.*;
 
-public class _232_QueuesWithTwoStacks {
+public class _0232_QueuesWithTwoStacks {
     /** Initialize your data structure here. */
 	private Deque<Integer> in; 
 	private Deque<Integer> out; 
     
-	public _232_QueuesWithTwoStacks() {
+	public _0232_QueuesWithTwoStacks() {
     	in = new ArrayDeque<Integer>(); 
     	out = new ArrayDeque<Integer>(); 
     }

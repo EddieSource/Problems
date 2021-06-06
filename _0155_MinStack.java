@@ -1,11 +1,11 @@
 import java.util.*;
-public class _155_MinStack {
+public class _0155_MinStack {
     /** initialize your data structure here. */
 	private Deque<Integer> dataStack; 
 	private Deque<Integer> minStack; 
 	private Deque<Integer> sizeStack; 
 	
-    public _155_MinStack() {
+    public _0155_MinStack() {
         dataStack = new ArrayDeque<>(); 
         minStack = new ArrayDeque<>(); 
         sizeStack = new ArrayDeque<>(); 

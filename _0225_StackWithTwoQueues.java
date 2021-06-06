@@ -1,9 +1,9 @@
 import java.util.*; 
-public class _225_StackWithTwoQueues {
+public class _0225_StackWithTwoQueues {
 	 /** Initialize your data structure here. */
     private Queue<Integer> q; 
     
-    public _225_StackWithTwoQueues() {
+    public _0225_StackWithTwoQueues() {
     	q = new LinkedList<>(); 
     }
     

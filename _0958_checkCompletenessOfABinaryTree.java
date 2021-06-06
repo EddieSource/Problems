@@ -1,6 +1,6 @@
 import java.util.*; 
 
-public class _958_checkCompletenessOfABinaryTree {
+public class _0958_checkCompletenessOfABinaryTree {
 	public class TreeNode {
 		int val;
 	    TreeNode left;     

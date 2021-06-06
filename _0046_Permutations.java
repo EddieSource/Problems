@@ -1,5 +1,5 @@
 import java.util.*; 
-public class _046_Permutations {
+public class _0046_Permutations {
     public List<List<Integer>> permute(int[] nums) {
     	List<List<Integer>> res = new ArrayList<>(); 
     	List<Integer> cur = new ArrayList<>(); 

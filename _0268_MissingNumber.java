@@ -1,5 +1,5 @@
 import java.util.*; 
-public class _268_MissingNumber {
+public class _0268_MissingNumber {
     public int missingNumber(int[] nums) {
     	int n = nums.length; //since size of the given array is just n because one element is missing
         int real_sum = (0 + n) * (n + 1) / 2; 

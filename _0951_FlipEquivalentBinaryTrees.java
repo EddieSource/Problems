@@ -1,5 +1,5 @@
 
-public class _951_FlipEquivalentBinaryTrees {
+public class _0951_FlipEquivalentBinaryTrees {
 	public class TreeNode {
 		int val;
 	    TreeNode left;     

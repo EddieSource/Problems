@@ -5,7 +5,7 @@ You may not modify the values in the list's nodes. Only nodes itself may be chan
 
  
  */
-public class _024_SwapLinkedListInPairs {
+public class _0024_SwapLinkedListInPairs {
 	 public class ListNode {
 		 int val;
 		 ListNode next;

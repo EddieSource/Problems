@@ -1,4 +1,4 @@
-public class _876_MiddleOfTheLinkedList {
+public class _0876_MiddleOfTheLinkedList {
 	public class ListNode {
 		int val;
 		ListNode next;

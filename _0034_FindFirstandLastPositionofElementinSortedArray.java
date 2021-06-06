@@ -1,5 +1,5 @@
 
-public class _034_FindFirstandLastPositionofElementinSortedArray {
+public class _0034_FindFirstandLastPositionofElementinSortedArray {
 	
 	public int[] searchRange(int[] nums, int target) {
 		/*

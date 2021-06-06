@@ -1,5 +1,5 @@
 
-public class _075_SortColors {
+public class _0075_SortColors {
 	private static void swap(int[] nums, int i, int j) {
 		int temp = nums[i]; 
 		nums[i] = nums[j]; 

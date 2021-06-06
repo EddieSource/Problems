@@ -1,5 +1,5 @@
 import java.util.*; 
-public class _692_TopKFrequentWords {
+public class _0692_TopKFrequentWords {
     public static List<String> topKFrequent(String[] words, int k) {
         List<String> res = new ArrayList<>(); 
         Map<String, Integer> mapWordToCount = new HashMap<>(); 

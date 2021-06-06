@@ -1,5 +1,5 @@
 import java.util.*; 
-public class _022_GenerateParentheses {
+public class _0022_GenerateParentheses {
 	public void DFS(List<String> res, int left, int right, StringBuilder cur) {
 		if(left == 0 && right == 0) {
 			res.add(cur.toString()); 

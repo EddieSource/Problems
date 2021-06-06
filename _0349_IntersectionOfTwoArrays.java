@@ -1,5 +1,5 @@
 import java.util.*; 
-public class _349_IntersectionOfTwoArrays {
+public class _0349_IntersectionOfTwoArrays {
 	public int[] intersection_helper(HashMap<Integer, Integer> smallMap, int[] smallNums, int[] largeNums) {
 		int[] res = new int[smallNums.length]; 
 		int index = 0; 

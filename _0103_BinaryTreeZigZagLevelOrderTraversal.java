@@ -1,5 +1,5 @@
 import java.util.*; 
-public class _103_BinaryTreeZigZagLevelOrderTraversal {
+public class _0103_BinaryTreeZigZagLevelOrderTraversal {
 	public class TreeNode {
 		int val;
 	    TreeNode left;     

@@ -1,5 +1,5 @@
 
-public class _206_ReverseLinkedList {
+public class _0206_ReverseLinkedList {
 	public class ListNode {
 		int val;
 		ListNode next;

@@ -1,4 +1,4 @@
-public class _098_ValidateBinarySearchTree {
+public class _0098_ValidateBinarySearchTree {
 	public class TreeNode {
 		int val;
 	    TreeNode left;     

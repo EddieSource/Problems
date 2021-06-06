@@ -1,5 +1,5 @@
 
-public class _322_CoinChange1 {
+public class _0322_CoinChange1 {
     public static int coinChange(int[] coins, int amount) {
     	int[] fewest = new int[amount + 1];
     	//fewest[i] means that the fewest number of coins to form amount i; 

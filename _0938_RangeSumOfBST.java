@@ -1,5 +1,5 @@
 
-public class _938_RangeSumOfBST {
+public class _0938_RangeSumOfBST {
 	public class TreeNode {
 		int val;
 	    TreeNode left;     

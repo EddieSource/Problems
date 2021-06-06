@@ -1,6 +1,6 @@
 
 
-public class _101_SymmetricTree {
+public class _0101_SymmetricTree {
 	public class TreeNode {
 		int val;
 	    TreeNode left;     

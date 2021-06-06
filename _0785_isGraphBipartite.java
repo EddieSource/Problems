@@ -1,5 +1,5 @@
 import java.util.*; 
-public class _785_isGraphBipartite {
+public class _0785_isGraphBipartite {
 	public static boolean isBipartite_helper(int node, int[][]graph, Map<Integer, Integer> mapNodeToGroup) {
         //already expanded this one
 		

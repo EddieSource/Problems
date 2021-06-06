@@ -1,5 +1,5 @@
 
-public class _744_FindSmallestLetterGreaterThanTarget {
+public class _0744_FindSmallestLetterGreaterThanTarget {
 	
     public static char nextGreatestLetter(char[] letters, char target) {
         //assumptions 2 < letters.length < 1000 : 
