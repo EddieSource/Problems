@@ -22,14 +22,13 @@ public class _0133_CloneGraph {
     	
     	HashMap<Node, Node> generated = new HashMap<>(); 
     	Queue<Node> realQ = new LinkedList<>();
-    	Queue<Node> cloneQ = new LinkedList<>(); 
-    	
+
     	// initial state 
     	realQ.offer(node); 
 
     	
     	Node cloneRoot = new Node(node.val); //initialized value
-    	cloneQ.offer(cloneRoot); 
+
     	
     	// important to initialize the generated map
     	generated.put(node, cloneRoot); 
@@ -37,7 +36,7 @@ public class _0133_CloneGraph {
     	while(!realQ.isEmpty()) {
     		//expand
     		Node realNode = realQ.poll(); 
-    		Node cloneNode = cloneQ.poll(); 
+    		Node cloneNode = generated.get(realNode); 
     		
     		//generate
     		for(Node realNeighbor: realNode.neighbors) {
@@ -55,7 +54,7 @@ public class _0133_CloneGraph {
     				generated.put(realNeighbor, cloneNeighbor); 
     				
     				realQ.offer(realNeighbor); 
-    				cloneQ.offer(cloneNeighbor); 
+
     			}
     			else {
     				cloneNode.neighbors.add(cloneNeighbor); 
