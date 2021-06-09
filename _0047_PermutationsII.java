@@ -13,13 +13,15 @@ public class _0047_PermutationsII {
     	if(index == nums.length) {
     		res.add(new ArrayList<>(cur)); 
     	}
-    	//HashSet in each level
+    	//HashSet of used in each level, if a character is used in this level there is no need to use any more
+    	
     	HashSet<Integer> set = new HashSet<>(); 
     	for(int i = index; i < nums.length; i++) {
     		if(set.contains(nums[i])) {
     			continue; 
     		}
     		set.add(nums[i]);
+    		
     		cur.add(nums[i]); 
     		swap(nums, i, index); 
     		DFS(nums, index + 1, cur, res); 
