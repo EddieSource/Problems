@@ -7,7 +7,9 @@ public class _0438_FindAllAnagramsInAString {
         }
         return true; 
     }
-    public List<Integer> findAnagrams(String s, String p) {
+    public List<Integer> findAnagrams(String lo, String sh) {
+    // Write your solution here
+    // return all the starting indices
         /**
         s, p
         cbaebabacd, abc
@@ -29,49 +31,69 @@ public class _0438_FindAllAnagramsInAString {
         currently {c:0, a:0, b:0}: anagaram, add the left -> [0, 6]    
         
         */
-        
-        List<Integer> res = new ArrayList<>(); 
-        if(p.length() > s.length()) return res; 
-        
-        int left = 0, right = 0 + p.length(); 
-        HashMap<Character, Integer> map = new HashMap<>(); 
-        for(int i = 0; i < p.length(); i++){
-            Integer freq = map.get(p.charAt(i)); 
-            if(freq == null) map.put(p.charAt(i), 1); 
-            else map.put(p.charAt(i), freq + 1); 
+
+    List<Integer> result = new ArrayList<>(); 
+    if (lo.length() == 0) return result; 
+    if (sh.length() > lo.length()) return result; 
+    Map<Character,Integer> map = countMap(sh); 
+
+    // when match = map.size(), we find an anagram
+    // match is the number of matched anagram
+    int match = 0;
+
+    for(int i = 0; i < lo.length(); i++){
+      char tmp = lo.charAt(i); 
+      Integer count = map.get(tmp); 
+
+      //processing the right
+      if(count != null){
+        map.put(tmp, count - 1); 
+
+        // if the count becomes 0 after processing, we fond a matching letter
+        if(count - 1 == 0){
+          match++; 
         }
-        
-        // initial state, beginning window
-        for(int i = left; i < right; i++){
-            Character ch = s.charAt(i); 
-            Integer freq = map.get(ch);
-            
-            if(freq != null) map.put(ch, freq - 1); 
+      }
+
+      // processing the left
+      if(i >= sh.length()){
+        tmp = lo.charAt(i - sh.length()); 
+        count = map.get(tmp); 
+        if(count != null){
+          map.put(tmp, count + 1); 
+          // if the count is 0 before the processing, we miss a matching number
+          if(count == 0){
+            match--; 
+          }
         }
-        
-        // compare
-        if(match(map)){
-            res.add(left); 
-        }
-        
-        // start traversing
-        while(right < s.length()){
-            Character ch = s.charAt(right); 
-            Integer freq = map.get(ch);
-            if(freq != null) map.put(ch, freq - 1); 
-            right++; 
-            
-            ch = s.charAt(left); 
-            freq = map.get(ch); 
-            if(freq != null) map.put(ch, freq + 1); 
-            left++; 
-            
-            if(match(map)) res.add(left); 
-        }
-        
-        
-        return res; 
+      }
+
+      //for the current
+      if(match == map.size()){
+        result.add(i - sh.length() + 1); 
+      }
     }
+    return result; 
+
+  }
+
+   public Map<Character, Integer> countMap(String sh){
+    Map<Character, Integer> res = new HashMap<>(); 
+
+    for(char elem : sh.toCharArray()){
+      Integer count = res.get(elem); 
+      if(count == null){
+        res.put(elem, 1); 
+      }
+      else{
+        res.put(elem, count + 1); 
+      }
+    }
+
+    return res; 
+  }
+  
+  
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
