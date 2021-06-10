@@ -1,6 +1,7 @@
 import java.util.*; 
 public class _0266_PalindromePermutaion {
     public boolean canPermutePalindrome(String s) {
+    	// first see the pattern of the palindrome, or string; this problem does not need DFS or any permutations
         // assumptions
         HashSet<Character> set = new HashSet<>(); 
         for(int i = 0; i < s.length(); i++){
