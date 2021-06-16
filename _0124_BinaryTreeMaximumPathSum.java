@@ -29,13 +29,18 @@ public class _0124_BinaryTreeMaximumPathSum {
     
     public int helper(TreeNode root, int[] max) {
     	if(root == null) return 0; 
+    	
     	int left = helper(root.left, max); 
     	int right = helper(root.right, max); 
     	
+    	// if left/right branch < 0 make it 0
     	left = left < 0 ? 0: left; 
     	right = right < 0 ? 0: right; 
+    	
+    	// must take the current value into consideration, since it has not been yet traversed
     	max[0] = Math.max(root.val + left + right, max[0]); 
-    	return root.val + Math.max(left,  right); 
+    	
+    	return root.val + Math.max(left, right); 
     		
     	
     }
