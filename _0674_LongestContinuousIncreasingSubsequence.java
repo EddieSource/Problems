@@ -1,5 +1,5 @@
 
-public class _674_LongestContinuousIncreasingSubsequence {
+public class _0674_LongestContinuousIncreasingSubsequence {
     public static int findLengthOfLCIS(int[] nums) {
     	if(nums.length == 0) return 0; 
     	// m[i] the size of the largest substring ending with nums[i] inclusive

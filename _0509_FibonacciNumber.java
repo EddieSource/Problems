@@ -1,5 +1,5 @@
 
-public class _509_FibonacciNumber {
+public class _0509_FibonacciNumber {
     public int fib(int n) {
     	// O(n)
     	if(n == 0) return 0; 
