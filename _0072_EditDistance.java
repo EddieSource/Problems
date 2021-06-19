@@ -17,9 +17,9 @@ public class _0072_EditDistance {
               distance[i][j] = distance[i - 1][j - 1]; 
             }
             else {
-              //delete and insert
+              //delete and insert(insert the same letter)
               distance[i][j] = Math.min(distance[i - 1][j] + 1, distance[i][j - 1] + 1); 
-              //replace
+              //replace(replace the same letter)
               distance[i][j] = Math.min(distance[i - 1][j - 1] + 1, distance[i][j]);
             }
           }
