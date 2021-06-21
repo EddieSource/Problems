@@ -1,7 +1,8 @@
 import java.util.*; 
-public class _303_RangeSumQuery {
+public class _0303_RangeSumQuery {
 	int[] sumEndingAt; 
-    public NumArray(int[] nums) {
+    public _0303_RangeSumQuery(int[] nums) {
+    	// public numArray(int[] nums) {
     	// assumption: nums.length >= 1; 
     	sumEndingAt = new int[nums.length + 1]; 
     	sumEndingAt[0] = 0; 
