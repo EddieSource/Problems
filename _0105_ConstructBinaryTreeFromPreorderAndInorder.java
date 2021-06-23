@@ -30,6 +30,7 @@ public class _0105_ConstructBinaryTreeFromPreorderAndInorder {
 	}
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
 		// initialze inorder position lookup 
+		if(preorder.length == 0 || inorder.length == 0) return null; 
 		Map<Integer, Integer> pos = new HashMap<>(); 
 		for(int i = 0; i < inorder.length; i++) {
 			pos.put(inorder[i], i); 
