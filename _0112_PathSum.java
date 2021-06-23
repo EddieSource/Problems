@@ -1,6 +1,6 @@
 import java.util.*; 
 
-public class _0112 {
+public class _0112_PathSum {
 	 public class TreeNode {
 	      int val;
 	      TreeNode left;
