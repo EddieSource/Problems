@@ -23,7 +23,7 @@ public class _0112_PathSum {
         
         boolean left = hasPathSum(root.left, targetSum); 
         boolean right = hasPathSum(root.right, targetSum); 
-        return left || right;  
+        return left || right; 
     }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
