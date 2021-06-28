@@ -8,6 +8,7 @@ public class _0210_CourseSchedule2 {
 	    }
 	    for (int[] dependency: prerequisites) {
 	      int x = dependency[0]; 
+	      // y is prerequisite, y's order prior than x
 	      int y = dependency[1]; 
 	      graph.get(y).add(x); 
 	    }
