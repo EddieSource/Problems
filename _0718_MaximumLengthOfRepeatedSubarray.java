@@ -6,7 +6,8 @@ public class _0718_MaximumLengthOfRepeatedSubarray {
         // assumption nums1.length > 0, nums2.length > 0
     	
     	int[][] m = new int[nums1.length + 1][nums2.length + 1]; 
-    	//m[i, j] means the length of common subarray from [0, i) of nums1, and [0, j) from nums2
+    	// M[i][j]‌ ‌represents‌ ‌the‌ ‌length‌ ‌of‌ ‌the‌ ‌longest‌ ‌common‌ ‌substring‌ ‌between‌ ‌a[0..i-1]‌ ‌(the‌ ‌first‌ ‌i‌ ‌letters‌ ‌
+    	// of‌ ‌a)‌ ‌and‌ ‌b[0..j-1]‌ ‌(the‌ ‌first‌ ‌j‌ ‌letters‌ ‌of‌ ‌b)‌ ‌‌that‌ ‌includes‌ ‌a[i-1]‌ ‌and‌ ‌b[j-1]‌ ‌
     	int solution = 0; 
         
     	for (int i = 0; i <= nums1.length; i++) {
