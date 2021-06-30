@@ -13,6 +13,7 @@ public class _1547_MinimumCostToCutAStick {
     int[][] minCost = new int[helper.length][helper.length]; 
     // minCost represent the minimum cost of cutting the wood between i and j
     for (int i = 1; i < helper.length; i++) {
+    	
       for (int j = i - 1; j >= 0; j--) {
         if (j + 1 == i) {
           minCost[j][i] = 0; 
