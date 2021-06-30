@@ -1,7 +1,7 @@
 import java.util.*; 
 public class _1547_MinimumCostToCutAStick {
     public int minCost(int n, int[] cuts) {
-    Arrays.sort(cuts); 
+    	Arrays.sort(cuts); 
     int[] helper = new int[cuts.length + 2]; 
     helper[0] = 0; 
     for (int i = 0; i < cuts.length; i++) {
