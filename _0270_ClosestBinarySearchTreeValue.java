@@ -14,7 +14,10 @@ public class _0270_ClosestBinarySearchTreeValue {
         }
 	}
 	public void helper(TreeNode root, double target, int[] val) {
-		// base case O(n) solution
+		// time complexity O(h) solution
+		// space complexity: stack O(h) solution because of the recursion
+		
+		// base case
 		if(root == null) return; 
 		
 		double original_diff = Math.abs(val[0] - target); 
@@ -22,8 +25,8 @@ public class _0270_ClosestBinarySearchTreeValue {
 		if(new_diff < original_diff) {
 			val[0] = root.val; 
 		}
-		helper(root.left, target, val); 
-		helper(root.right, target, val); 
+		if(target < root.val) helper(root.left, target, val); 
+		else helper(root.right, target, val); 
 		
 	}
 	public int closestValue(TreeNode root, double target) {
