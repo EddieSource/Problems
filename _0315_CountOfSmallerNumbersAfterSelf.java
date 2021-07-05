@@ -43,6 +43,7 @@ public class _0315_CountOfSmallerNumbersAfterSelf {
     	while (i < mid && j < right) {
     		if(nums[indices[i]] <= nums[indices[j]]) {
     			// j - mid numbers jump to the left side of indices[i]
+    			// how many numbers are before the indices[i] till now
     			result[indices[i]] += j - mid; 
     			temp.add(indices[i]); 
     			i++; 
@@ -54,6 +55,8 @@ public class _0315_CountOfSmallerNumbersAfterSelf {
     	}
     	
     	while(i < mid) {
+    		// right part was already in the temp
+    		// so we calculate how many steps(how many right elements) the left left jumped
     		result[indices[i]] += j - mid; 
     		temp.add(indices[i]); 
     		i++; 
@@ -62,6 +65,7 @@ public class _0315_CountOfSmallerNumbersAfterSelf {
     	// probabily the current length is odd
     	while (j < right) {
     		temp.add(indices[j]); 
+    		// right is still right so nothing changed
     		j++; 
     	}
     	
