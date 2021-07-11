@@ -18,11 +18,11 @@ public class _0153_FindMinInRotatedSortedArray {
         		// nums[mid] will not be the target
         		left = mid + 1; 
         	}
-        	// nums[mid] == nums[right] and mid can never equal to right so we rule right out
-        	else right--; 
+//        	// nums[mid] == nums[right] and mid can never equal to right so we rule right out
+//        	else right--; 
         }
         
-        return nums[left]; 
+        return nums[left];   
     }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
