@@ -1,5 +1,5 @@
 
-public class _0081_SearchInRotatedSortedArray {
+public class _0081_SearchInRotatedSortedArray2 {
 	  public int firstOccurrence(int[] array, int target, int left, int right){
 	        if(left > right){
 	          return -1; 
