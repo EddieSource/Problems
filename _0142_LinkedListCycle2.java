@@ -8,7 +8,7 @@ public class _0142_LinkedListCycle2 {
 	          next = null;
 	      }
 	  }
-	  public ListNode cycleNode(ListNode head) {
+	  public ListNode detectCycle(ListNode head)  {
 		    // write your solution here
 		    if(head == null || head.next == null) return null; 
 		    Set<ListNode> visited = new HashSet<>(); 
