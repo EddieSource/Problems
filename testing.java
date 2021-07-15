@@ -1,36 +1,79 @@
 
 public class testing {
-	public static int numIncreasingSubsequences(int[] a) {
-	    // Write your solution here
-	    if (a.length == 0) return 0; 
-	    int[] m = new int[a.length]; 
-	    // m[i] represents the count of ascending subsequence ending at i
-	    
-	    m[0] = 1; 
-	    
-	    // initial status
-	    
-	    int count = 1; 
+	  public int firstOccurrence(int[] array, int target, int left, int right){
 
-	    for (int i = 1; i < a.length; i++) {
-	      for (int j = 0; j < i; j++) {
-	    	// letter itself is an ascending array
-	    	m[i] = 1; 
-	        if (a[i] > a[j]) {// ascending
-	          m[i] = m[i] + m[j]; 
-	        } 
-	        
-	        // if not we don't do anything just reset max SubLength
-	        count += m[i]; 
-	      }
-	    }
+		    while(left < right - 1){
+		      int mid = left + (right - left) / 2; 
+		      if(target < array[mid]) right = mid; 
+		      else if(target > array[mid]) left = mid; 
+		      // equal we search the first half of array
+		      else right = mid; 
+		    }
 
-	    return count; 
-	  
-	  }
+		    // find first occurrence of a number
+		    if(array[left] == target) return left; 
+		    if(array[right] == target) return right; 
+		    else return -1; 
+		  }
+
+		  public int findPivot(int[] array, int left, int right){
+		    // pivot must exist
+		    // terminate condition of while loop could be [array[pivot]] left < right
+		    // or [array[larger], array[pivot]] left < right - 1
+		    // or [array[pivot], array[larger]] left < right - 1
+		    // 2 2 3 2
+		    while(left < right - 1){
+		      int mid = left + (right - left) / 2; // could be equal left
+		      if(array[mid] > array[right]){
+		        // since array[mid] is the larger so it can not be pivot
+		        left = mid + 1; 
+		      }
+		      else if(array[mid] < array[right]){
+		        right = mid; 
+		      }
+		      // duplicate
+		      else {
+		        // since mid can not be equal to right
+		        // we rule out the right, and the mid position will also decrease
+		        right--; 
+		      }
+		    }
+
+		    if(array[left] <= array[right]){
+		      return left; 
+		    }
+		    else return right; 
+
+		  }
+		  
+		  public int search(int[] array, int target) {
+		    // Write your solution here
+
+		    // corner case
+		    if(array == null || array.length == 0) return -1; 
+
+		    int left = 0, right = array.length - 1; 
+		    
+		    // the array is not rotated
+		    if(array[left] < array[right]) return firstOccurrence(array, target, 0, array.length -1); 
+		    //if(array[left] == array[right]) possible to be rotated
+
+		    // first find the pivot where array[pivot - 1] > array[pivot]
+		    // pivot - 1 will not be <0 since our array[left] > array[right] there must be a pivot != 0
+		    int pivot = findPivot(array, 0, array.length - 1); 
+
+		    // binary search in [0, pivot - 1]
+		    // binary search in [pivot, array.length - 1]
+		    int found = firstOccurrence(array, target, 0, pivot - 1); 
+		    if (found == -1) found = firstOccurrence(array, target, pivot, array.length - 1); 
+		    return found; 
+
+		  }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(numIncreasingSubsequences(new int[] {1,2,3})); 
+		testing a = new testing(); 
+
+		System.out.println(a.findPivot(new int[]{1,1,1,1,1,1,1,1,2,11,1,1,1}, 0, 12)); 
 	}
 
 }
