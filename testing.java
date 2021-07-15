@@ -1,79 +1,62 @@
-
+import java.util.*; 
 public class testing {
-	  public int firstOccurrence(int[] array, int target, int left, int right){
+	public int kthSum(int[] A, int[] B, int k) {
+	    // Write your solution here
 
-		    while(left < right - 1){
-		      int mid = left + (right - left) / 2; 
-		      if(target < array[mid]) right = mid; 
-		      else if(target > array[mid]) left = mid; 
-		      // equal we search the first half of array
-		      else right = mid; 
-		    }
+	    // assumption K > 0 && K <= m * n
+	    if(A == null || B == null) return -1; 
 
-		    // find first occurrence of a number
-		    if(array[left] == target) return left; 
-		    if(array[right] == target) return right; 
-		    else return -1; 
-		  }
+	    int a = 0, b = 0;  
+	    while(a < A.length && b < B.length){
+	      // a and b must be in the 
+	      int sum = A[a] + B[b]; 
+	      k--; 
+	      if(k == 0) return sum; 
 
-		  public int findPivot(int[] array, int left, int right){
-		    // pivot must exist
-		    // terminate condition of while loop could be [array[pivot]] left < right
-		    // or [array[larger], array[pivot]] left < right - 1
-		    // or [array[pivot], array[larger]] left < right - 1
-		    // 2 2 3 2
-		    while(left < right - 1){
-		      int mid = left + (right - left) / 2; // could be equal left
-		      if(array[mid] > array[right]){
-		        // since array[mid] is the larger so it can not be pivot
-		        left = mid + 1; 
-		      }
-		      else if(array[mid] < array[right]){
-		        right = mid; 
-		      }
-		      // duplicate
-		      else {
-		        // since mid can not be equal to right
-		        // we rule out the right, and the mid position will also decrease
-		        right--; 
-		      }
-		    }
+	      if(A[a] < B[b]) a++; 
+	      else b++; 
+	    }
 
-		    if(array[left] <= array[right]){
-		      return left; 
-		    }
-		    else return right; 
+	    while(a < A.length){
+	      // A left
+	      int sum = A[a] + B[B.length - 1]; 
+	      k--; 
+	      if(k == 0) return sum; 
+	      a++; 
+	    }
+	    
+	    while(b < B.length){
+	      // B left
+	      int sum = A[A.length - 1] + B[b]; 
+	      k--; 
+	      if(k == 0) return sum; 
+	      b++; 
+	    }
 
-		  }
-		  
-		  public int search(int[] array, int target) {
-		    // Write your solution here
-
-		    // corner case
-		    if(array == null || array.length == 0) return -1; 
-
-		    int left = 0, right = array.length - 1; 
-		    
-		    // the array is not rotated
-		    if(array[left] < array[right]) return firstOccurrence(array, target, 0, array.length -1); 
-		    //if(array[left] == array[right]) possible to be rotated
-
-		    // first find the pivot where array[pivot - 1] > array[pivot]
-		    // pivot - 1 will not be <0 since our array[left] > array[right] there must be a pivot != 0
-		    int pivot = findPivot(array, 0, array.length - 1); 
-
-		    // binary search in [0, pivot - 1]
-		    // binary search in [pivot, array.length - 1]
-		    int found = firstOccurrence(array, target, 0, pivot - 1); 
-		    if (found == -1) found = firstOccurrence(array, target, pivot, array.length - 1); 
-		    return found; 
-
-		  }
+	    return -1; 
+	    
+	  }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		testing a = new testing(); 
-
-		System.out.println(a.findPivot(new int[]{1,1,1,1,1,1,1,1,2,11,1,1,1}, 0, 12)); 
+		Map<List<Integer>, Boolean> a = new HashMap<>(); 
+		
+		List<Integer> b = new ArrayList<>(); 
+		b.add(1); 
+		b.add(2); 
+		
+		List<Integer> c = new ArrayList<>(); 
+		c.add(1); 
+		c.add(2); 
+		a.put(b, true); 
+		a.put(c, false); 
+		
+		List<Integer> d = new ArrayList<>(); 
+		d.add(1); 
+		d.add(2);
+		
+		System.out.println(a.get(b)); 
+		System.out.println(a.containsKey(d)); 
+		
 	}
 
 }
