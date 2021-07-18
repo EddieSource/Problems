@@ -12,39 +12,19 @@ public class _0702_SearchInUnknownSize {
         // *2
         int left = 0, right = 1; 
         while(reader.get(right) != Integer.MAX_VALUE){
-        	right = right * 10;
-        	// right = right * 2; 
+            right = right * 10; 
         }
         
         // search for the range
-        while(left < right - 1){
+        while(left <= right){
             int mid = left + (right - left) / 2;
-            
-            if(reader.get(mid) == Integer.MAX_VALUE){
-                right = mid; 
+            if(reader.get(mid) != Integer.MAX_VALUE && reader.get(mid) == target) return mid; 
+            else if(reader.get(mid) == Integer.MAX_VALUE || reader.get(mid) > target){
+                right = mid - 1; 
             } 
             else {
-                left = mid; 
+                left = mid + 1; 
             }
-        }
-        
-        int lastIndex; 
-        if(reader.get(right) != Integer.MAX_VALUE) lastIndex = right; 
-        else lastIndex = left; 
-        
-        // run classical binary search
-        int start = 0, end = lastIndex; 
-        while(start <= end) {
-        	int mid = start + (end - start) / 2; 
-        	if(target == reader.get(mid)) {
-        		return mid; 
-        	}
-        	else if(target > reader.get(mid)) {
-        		start = mid + 1; 
-        	}
-        	else {
-        		end = mid - 1; 
-        	}
         }
         return -1; 
         
