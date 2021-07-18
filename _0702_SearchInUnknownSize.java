@@ -11,7 +11,7 @@ public class _0702_SearchInUnknownSize {
         
         // *2
         int left = 0, right = 1; 
-        while(reader.get(right) != Integer.MAX_VALUE){
+        while(reader.get(right) < target){
             right = right * 10; 
         }
         
