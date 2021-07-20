@@ -4,7 +4,7 @@ public class _1306_JumpGame3 {
     	boolean[] done = new boolean[arr.length]; 
     	Arrays.fill(done, false); // all the indices are not start processing
     	boolean[] canReachOf = new boolean[arr.length]; 
-    	Arrays.fill(done, false); 
+    	Arrays.fill(canReachOf, false); 
     	return canReachHelper(arr, start, done, canReachOf); 
     }
     public boolean canReachHelper(int[] arr, int start, boolean[] done, boolean[] canReachOf) {
